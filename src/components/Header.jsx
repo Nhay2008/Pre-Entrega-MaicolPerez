@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/">Compu Mundo</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">Naruto Shop</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-between">
           <Nav className="me-auto">
