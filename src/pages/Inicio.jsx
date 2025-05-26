@@ -3,6 +3,13 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Inicio() {
   const navigate = useNavigate();
+  const baseUrl = import.meta.env.BASE_URL;
+
+  const images = [
+    { src: `${baseUrl}img/naruto.jpg`, alt: 'Naruto' },
+    { src: `${baseUrl}img/sasuke.jpg`, alt: 'Sasuke' },
+    { src: `${baseUrl}img/equipo7.jpg`, alt: 'Equipo 7' },
+  ];
 
   return (
     <Container className="mt-4">
@@ -21,12 +28,8 @@ export default function Inicio() {
       </div>
 
       {/* Carrusel de imágenes */}
- <Carousel className="mb-5 rounded-4 overflow-hidden shadow">
-  {[
-    { src: '/img/naruto.jpg', alt: 'Naruto' },
-    { src: '/img/sasuke.jpg', alt: 'Sasuke' },
-    { src: '/img/equipo7.jpg', alt: 'Equipo 7' }
-  ].map((item, index) => (
+<Carousel className="mb-5 rounded-4 overflow-hidden shadow">
+  {images.map((item, index) => (
     <Carousel.Item key={index} className="text-center">
       <img
         className="d-inline-block"
@@ -36,7 +39,7 @@ export default function Inicio() {
           maxHeight: '400px',
           width: '100%',
           objectFit: 'contain',
-          backgroundColor: 'transparent',  // Aquí quitas el fondo negro
+          backgroundColor: 'transparent',
         }}
       />
     </Carousel.Item>
